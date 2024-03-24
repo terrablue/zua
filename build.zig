@@ -51,5 +51,7 @@ pub fn build(b: *std.Build) void {
     });
 
     lib.installHeader("src/lua.h", "lua.h");
+    lib.installHeader("src/lualib.h", "lualib.h");
+    lib.installHeader("src/lauxlib.h", "lauxlib.h");
     b.installArtifact(lib);
 }
