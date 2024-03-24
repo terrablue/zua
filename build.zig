@@ -12,6 +12,7 @@ pub fn build(b: *std.Build) void {
     lib.linkLibC();
     lib.addCSourceFiles(.{
         .files = &.{
+            // base
             "src/lapi.c",
             "src/lcode.c",
             "src/ldebug.c",
@@ -31,6 +32,7 @@ pub fn build(b: *std.Build) void {
             "src/lundump.c",
             "src/lvm.c",
             "src/lzio.c",
+            // lib
             "src/lauxlib.c",
             "src/lbaselib.c",
             "src/ldblib.c",
@@ -41,6 +43,14 @@ pub fn build(b: *std.Build) void {
             "src/lstrlib.c",
             "src/loadlib.c",
             "src/linit.c",
+            // extensions
+            "src/lua_bit.c",
+            "src/lua_cjson.c",
+            "src/lua_struct.c",
+            "src/lua_cmsgpack.c",
+            // extensions deps
+            "src/strbuf.c",
+            "src/fpconv.c",
         },
         .flags = &.{
             "-std=c99",
